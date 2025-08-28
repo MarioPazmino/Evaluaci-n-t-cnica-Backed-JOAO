@@ -13,36 +13,7 @@ class ClienteSeeder extends Seeder
      */
     public function run(): void
     {
-        $clientes = [
-            [
-                'nombre' => 'Juan Pérez',
-                'email' => 'juan.perez@example.com',
-                'telefono' => '+1234567890'
-            ],
-            [
-                'nombre' => 'María García',
-                'email' => 'maria.garcia@example.com',
-                'telefono' => '+0987654321'
-            ],
-            [
-                'nombre' => 'Carlos López',
-                'email' => 'carlos.lopez@example.com',
-                'telefono' => null
-            ],
-            [
-                'nombre' => 'Ana Martínez',
-                'email' => 'ana.martinez@example.com',
-                'telefono' => '+1122334455'
-            ],
-            [
-                'nombre' => 'Luis Rodríguez',
-                'email' => 'luis.rodriguez@example.com',
-                'telefono' => '+5566778899'
-            ]
-        ];
-
-        foreach ($clientes as $cliente) {
-            Cliente::create($cliente);
-        }
+        // Crear 10 clientes usando el factory
+        Cliente::factory(10)->create();
     }
 }
