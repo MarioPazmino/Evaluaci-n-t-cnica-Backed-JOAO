@@ -10,8 +10,9 @@ Route::get('/user', function (Request $request) {
 
 // Rutas para CRUD de Clientes
 Route::prefix('clientes')->group(function () {
-    Route::get('/', [ClienteController::class, 'index']);     // Listar clientes
-    Route::post('/', [ClienteController::class, 'store']);    // Crear cliente
-    Route::delete('/{cliente}', [ClienteController::class, 'destroy']); // Eliminar cliente
+    Route::get('/', [ClienteController::class, 'index']);                    // Listar clientes (con búsqueda y paginación)
+    Route::post('/', [ClienteController::class, 'store']);                   // Crear cliente
+    Route::put('/{cliente}', [ClienteController::class, 'update']);          // Actualizar cliente
+    Route::delete('/{cliente}', [ClienteController::class, 'destroy']);      // Eliminar cliente
     Route::get('/check-email/{email}', [ClienteController::class, 'checkEmail']); // Verificar si email existe
 });

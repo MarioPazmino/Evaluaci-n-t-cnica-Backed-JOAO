@@ -32,10 +32,37 @@ class ClienteService
     }
 
     /**
+     * Actualizar un cliente
+     */
+    public function updateCliente(Cliente $cliente, array $data): Cliente
+    {
+        $cliente->update($data);
+        return $cliente->fresh();
+    }
+
+    /**
      * Buscar cliente por email
      */
     public function findByEmail(string $email): ?Cliente
     {
         return Cliente::where('email', $email)->first();
+    }
+
+    /**
+     * Buscar clientes con filtros
+     */
+    public function searchClientes(string $search = null, int $perPage = 10)
+    {
+        $query = Cliente::query();
+
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('nombre', 'LIKE', "%{$search}%")
+                  ->orWhere('email', 'LIKE', "%{$search}%")
+                  ->orWhere('telefono', 'LIKE', "%{$search}%");
+            });
+        }
+
+        return $query->paginate($perPage);
     }
 }
