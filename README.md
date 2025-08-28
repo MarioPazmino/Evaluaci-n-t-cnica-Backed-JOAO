@@ -2,7 +2,7 @@
 
 Sistema completo de gestión de clientes desarrollado con **Laravel 12** que implementa un CRUD con arquitectura limpia y mejores prácticas.
 
-## 📋 Características Implementadas
+## Características Implementadas
 
 ### ✅ Requisitos Obligatorios
 - **CRUD Completo de Clientes** (Crear, Leer, Actualizar, Eliminar)
@@ -10,7 +10,7 @@ Sistema completo de gestión de clientes desarrollado con **Laravel 12** que imp
 - **API REST** con respuestas JSON estructuradas
 - **Base de datos MySQL** con migraciones
 
-### 🔥 Características Adicionales (Requisitos Opcionales)
+### Características Adicionales (Requisitos Opcionales)
 - **Búsqueda y filtrado** de clientes en tiempo real
 - **Paginación** para grandes volúmenes de datos
 - **Validación de email en vivo** (verificar si ya existe)
@@ -18,11 +18,11 @@ Sistema completo de gestión de clientes desarrollado con **Laravel 12** que imp
 - **CORS configurado** para frontend
 - **Datos de prueba** con Factory pattern
 
-## 🏗️ Arquitectura y Decisiones Técnicas
+## Arquitectura y Decisiones Técnicas
 
 ### Patrón de Responsabilidad Única (SRP)
 ```
-📁 Estructura del proyecto:
+ Estructura del proyecto:
 ├── app/Http/Controllers/ClienteController.php    # Manejo de HTTP requests
 ├── app/Http/Requests/StoreClienteRequest.php     # Validaciones para crear
 ├── app/Http/Requests/UpdateClienteRequest.php    # Validaciones para actualizar
@@ -41,13 +41,12 @@ Sistema completo de gestión de clientes desarrollado con **Laravel 12** que imp
 5. **Repository Pattern implícito**: A través de Eloquent ORM
 6. **Validation Rules diferenciadas**: Diferentes reglas para crear vs actualizar
 
-## 🛠️ Instalación y Configuración
+##  Instalación y Configuración
 
 ### Prerrequisitos
 - PHP 8.4+
 - Composer
 - MySQL 8.0+
-- Node.js (opcional, para assets)
 
 ### 1. Clonar el repositorio
 ```bash
@@ -62,10 +61,8 @@ composer install
 
 ### 3. Configurar el entorno
 ```bash
-# Copiar archivo de configuración
 cp .env.example .env
 
-# Generar clave de aplicación
 php artisan key:generate
 ```
 
@@ -97,7 +94,7 @@ php artisan serve
 
 La API estará disponible en: `http://127.0.0.1:8000`
 
-## 🌐 Endpoints de la API
+## Endpoints de la API
 
 ### Clientes
 | Método | Endpoint | Descripción | Parámetros |
@@ -145,8 +142,8 @@ curl -X GET http://127.0.0.1:8000/api/clientes/check-email/juan@example.com
   "data": [
     {
       "id": 1,
-      "nombre": "Juan Pérez",
-      "email": "juan@example.com",
+      "nombre": "Mario Pazmiño",
+      "email": "mario@example.com",
       "telefono": "+1234567890",
       "created_at": "2025-08-28 17:30:00",
       "updated_at": "2025-08-28 17:30:00"
@@ -202,7 +199,7 @@ php artisan route:list
 php artisan cache:clear
 ```
 
-## 🔒 Validaciones Implementadas
+## Validaciones Implementadas
 
 ### Crear Cliente
 - `nombre`: Requerido, máximo 255 caracteres
@@ -237,7 +234,7 @@ GET /api/clientes/check-email/nuevo@email.com?exclude_id=5
 GET /api/clientes?paginate=true&per_page=15
 ```
 
-## 📈 Escalabilidad y Mejores Prácticas
+## Escalabilidad y Mejores Prácticas
 
 1. **Inyección de Dependencias**: Controllers reciben Services via constructor
 2. **Factory Pattern**: Datos de prueba generados dinámicamente
@@ -246,7 +243,7 @@ GET /api/clientes?paginate=true&per_page=15
 5. **Service Layer**: Lógica de negocio separada de HTTP concerns
 6. **CORS Ready**: Configurado para consumo desde frontend
 
-## 🔧 Configuración de Desarrollo
+## Configuración de Desarrollo
 
 ### Variables de Entorno Importantes
 ```env
@@ -262,7 +259,7 @@ DB_CONNECTION=mysql
 - `json`
 - `openssl`
 
-## 📝 Notas del Desarrollador
+## Notas del Desarrollador
 
 Este proyecto demuestra:
 - **Arquitectura limpia** siguiendo principios SOLID
