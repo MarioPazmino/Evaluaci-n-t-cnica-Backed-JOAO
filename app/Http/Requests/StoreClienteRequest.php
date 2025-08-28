@@ -11,7 +11,7 @@ class StoreClienteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return true; // Permitir por ahora, aquí puedes agregar lógica de autorización
+        return true;
     }
 
     /**

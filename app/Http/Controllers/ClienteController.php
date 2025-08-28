@@ -130,7 +130,7 @@ class ClienteController extends Controller
     public function checkEmail(string $email): JsonResponse
     {
         try {
-            $clienteId = request('exclude_id'); // Para excluir el ID actual en edición
+            $clienteId = request('exclude_id'); 
             $cliente = $this->clienteService->findByEmail($email);
             
             $exists = $cliente && (!$clienteId || $cliente->id != $clienteId);

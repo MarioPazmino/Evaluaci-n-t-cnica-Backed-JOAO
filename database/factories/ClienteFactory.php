@@ -19,7 +19,7 @@ class ClienteFactory extends Factory
         return [
             'nombre' => $this->faker->name(),
             'email' => $this->faker->unique()->safeEmail(),
-            'telefono' => $this->faker->optional(0.7)->phoneNumber(), // 70% probabilidad de tener teléfono
+            'telefono' => $this->faker->optional(0.7)->phoneNumber(), 
         ];
     }
 }
